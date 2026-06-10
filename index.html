@@ -3,97 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curiously Wired Studio | Outloud Course</title>
-    <script src="https://tailwindcss.com"></script>
+    <title>Curiously Wired Studio | #RemixYourLife</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://googleapis.com');
         
-        body { font-family: 'Space Grotesk', sans-serif; background-color: #0A050D; color: #F5F5F5; }
+        body { 
+            font-family: 'Space Grotesk', sans-serif; 
+            background-color: #060309; 
+            color: #F5F5F5; 
+        }
         .heading-font { font-family: 'Syne', sans-serif; }
-        .marker-font { font-family: 'Permanent Marker', cursive; }
         
-        /* Neon Studio Glows */
-        .neon-crimson { text-shadow: 0 0 10px #FF0055, 0 0 20px #FF0055; }
-        .neon-blue { text-shadow: 0 0 10px #00F0FF, 0 0 20px #00F0FF; }
-        .glow-border { box-shadow: 0 0 15px rgba(255, 0, 85, 0.2); border-color: #FF0055; }
+        /* Breathing Studio Neon Pulse - No Strobe/No Flash */
+        @keyframes breathingGlow {
+            0%, 100% { text-shadow: 0 0 10px #FF0055, 0 0 20px #FF0055; box-shadow: 0 0 15px rgba(255, 0, 85, 0.2); }
+            50% { text-shadow: 0 0 18px #FF0055, 0 0 35px #FF0055; box-shadow: 0 0 25px rgba(255, 0, 85, 0.4); }
+        }
+        @keyframes breathingBlue {
+            0%, 100% { text-shadow: 0 0 10px #00F0FF, 0 0 20px #00F0FF; box-shadow: 0 0 15px rgba(0, 240, 255, 0.1); }
+            50% { text-shadow: 0 0 18px #00F0FF, 0 0 35px #00F0FF; box-shadow: 0 0 25px rgba(0, 240, 255, 0.3); }
+        }
+        
+        .neon-pulse-crimson { animation: breathingGlow 4s infinite ease-in-out; }
+        .neon-pulse-blue { animation: breathingBlue 4s infinite ease-in-out; }
+        
+        .studio-block {
+            background-color: #110B17;
+            border: 3px solid #261633;
+            box-shadow: 6px 6px 0px #FF0055;
+        }
+        .studio-block-blue {
+            background-color: #0A050D;
+            border: 3px solid #162933;
+            box-shadow: 6px 6px 0px #00F0FF;
+        }
     </style>
 </head>
-<body class="selection:bg-[#FF0055] selection:text-white overflow-x-hidden">
+<body class="selection:bg-[#FF0055] selection:text-white min-h-screen flex flex-col justify-between py-6 px-4 md:px-8">
 
-    <!-- HEADER & LOGO -->
-    <nav class="p-6 md:p-10 flex justify-between items-center border-b border-white/10 bg-[#0A050D]">
-        <div class="heading-font text-2xl font-black tracking-tighter uppercase text-[#FF0055] neon-crimson">Curiously Wired Studio</div>
-        <div class="flex items-center gap-2">
-            <span class="w-2 h-2 rounded-full bg-red-600 animate-pulse"></span>
-            <span class="text-xs uppercase tracking-[0.2em] font-bold text-red-500">ON AIR</span>
-        </div>
-    </nav>
+    <div class="w-full max-w-5xl mx-auto space-y-12">
 
-    <!-- HERO SECTION: THE MIXTAPE DROP -->
-    <header class="relative min-h-[90vh] flex flex-col justify-center p-6 md:p-20 border-b border-white/5">
-        <div class="max-w-5xl z-10">
-            <span class="text-[#00F0FF] neon-blue uppercase font-bold tracking-widest text-sm block mb-4">// VELVET OVER FIRE</span>
-            <h1 class="heading-font text-5xl md:text-8xl font-black tracking-tight leading-none mb-6">
-                EMOTIONAL INTELLIGENCE <br><span class="text-[#FF0055] neon-crimson">WITH TEETH.</span>
-            </h1>
-            <p class="text-lg md:text-2xl text-gray-400 max-w-2xl mb-8 leading-relaxed font-light">
-                Frankie Undistorted doesn't whisper healing. She sings it raw. Outloud is the 90-day peer-led masterclass to reclaim your frequency.
-            </p>
-            <a href="#claim-freebie" class="inline-block bg-[#FF0055] text-white heading-font uppercase font-extrabold px-8 py-4 text-lg border-2 border-transparent hover:bg-transparent hover:border-[#FF0055] transition-all duration-300">
-                Drop The Unlearning Playlist
-            </a>
-        </div>
-    </header>
-
-    <!-- MEET FRANKIE SECTION -->
-    <section class="py-20 px-6 md:px-20 bg-[#110B17] border-b border-white/5">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-            <div class="space-y-6">
-                <span class="text-xs uppercase tracking-[0.3em] text-[#FF0055] font-bold block">// THE ARTIST & PEER ADVOCATE</span>
-                <h2 class="heading-font text-4xl md:text-6xl font-black uppercase tracking-tight">The Mic Drop</h2>
-                <p class="text-gray-300 text-lg leading-relaxed">
-                    Frankie Undistorted is what happens when deep emotional awareness stops performing politely. Coming straight out of a midnight session with eyeliner, rage, and pure clarity, she blends lyrical truth and blunt journal therapy into tactical frameworks. 
-                </p>
-                <p class="text-gray-400 font-light italic border-l-2 border-[#00F0FF] pl-4">
-                    "If I'm too loud, turn your life down. You weren't 'too much'—you were just a bigger frequency than they could handle."
-                </p>
-            </div>
-            <div class="bg-[#0A050D] p-8 border border-white/10 glow-border">
-                <h3 class="heading-font text-xl font-bold tracking-wider uppercase mb-6 text-[#00F0FF] neon-blue">Studio Directives</h3>
-                <div class="space-y-4 text-sm font-bold uppercase tracking-wider">
-                    <div class="p-3 bg-white/5 border border-white/5"><span class="text-[#FF0055] mr-2">●</span> Loud Realizations Only</div>
-                    <div class="p-3 bg-white/5 border border-white/5"><span class="text-[#FF0055] mr-2">●</span> Setbacks Are Just Damn Remixes</div>
-                    <div class="p-3 bg-white/5 border border-white/5"><span class="text-[#FF0055] mr-2">●</span> Protect Peace Like It Has A PIN</div>
+        <!-- BRAND CONTROL MONITOR HEADER -->
+        <header class="studio-block p-6 text-center">
+            <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+                <div class="flex items-center gap-4">
+                    <img src="logo.png" alt="" class="h-8 w-auto opacity-90" onerror="this.style.display='none'">
+                    <span class="heading-font text-2xl font-black tracking-tighter uppercase text-[#FF0055] neon-pulse-crimson">
+                        Curiously Wired Studio
+                    </span>
+                </div>
+                <div class="flex items-center gap-3 px-4 py-1.5 bg-black/40 border border-red-500/30">
+                    <span class="w-2.5 h-2.5 rounded-full bg-red-600 animate-pulse"></span>
+                    <span class="text-xs uppercase tracking-[0.3em] font-black text-red-500">ON AIR</span>
                 </div>
             </div>
-        </div>
-    </section>
+        </header>
 
-    <!-- LEAD CAPTURE SECTION -->
-    <section id="claim-freebie" class="py-24 px-6 text-center max-w-4xl mx-auto">
-        <h2 class="heading-font text-3xl md:text-6xl font-black tracking-tight mb-4">WHAT IS BEING POLITE COSTING YOU?</h2>
-        <p class="text-gray-400 mb-8 max-w-xl mx-auto font-light">
-            Claim the 3-part freebie remix bundle: The Politeness Audit, the 5 PM Hard-Out Scripts, and Frankie's 7-Day Audio Hype Loops. 
-        </p>
-        
-        <form class="flex flex-col sm:flex-row gap-2 max-w-md mx-auto" onsubmit="event.preventDefault(); alert('Playlist deployed to your queue.');">
-            <input type="email" required placeholder="ENTER YOUR PRIMARY EMAIL" class="flex-1 bg-[#160F21] border border-white/10 px-4 py-3 text-white focus:outline-none focus:border-[#FF0055] text-sm">
-            <button type="submit" class="bg-[#FF0055] text-white heading-font uppercase font-extrabold px-6 py-3 text-sm hover:bg-white hover:text-black transition-colors duration-300">
-                Get Playlist
-            </button>
-        </form>
-    </section>
+        <!-- MAIN INTERACTIVE HERO CONTAINER -->
+        <main class="relative studio-block p-8 md:p-16 text-center space-y-8 overflow-hidden">
+            <!-- Background Image: Dark Studio Environment Overlay -->
+            <div class="absolute inset-0 z-0 opacity-10 bg-cover bg-center mix-blend-luminosity pointer-events-none scale-105" 
+                 style="background-image: url('studio-bg.jpg');">
+            </div>
 
-    <!-- MANDATORY LEGAL DISCLAIMER FOOTER -->
-    <footer class="p-6 md:p-12 border-t border-white/10 bg-[#060309] text-xs text-gray-500 space-y-6">
-        <div class="max-w-4xl mx-auto text-center leading-relaxed font-light">
-            <span class="block font-bold text-gray-400 uppercase tracking-widest mb-2">Disclaimer & Support Notice</span>
-            Frankie Undistorted is a peer mentor and support group leader, NOT a licensed therapist, psychologist, or medical healthcare professional. The content, tools, audio loops, and courses offered via Curiously Wired Studio and Outloud are for educational, peer support, and personal empowerment purposes only. They do not constitute clinical mental health therapy or medical intervention. If you are experiencing psychological distress, please consult a qualified healthcare provider.
-        </div>
-        <div class="text-center opacity-40 text-[10px] uppercase tracking-[0.4em] pt-4 border-t border-white/5">
-            &copy; 2026 Curiously Wired Studio // Outloud. All Rights Reserved.
-        </div>
-    </footer>
+            <div class="relative z-10 space-y-6 max-w-4xl mx-auto">
+                <span class="text-[#00F0FF] text-xs font-bold uppercase tracking-[0.4em] block">
+                    // IS PRETENDING YOU DON'T HAVE ADHD WORKING FOR YOU? //
+                </span>
+                <h1 class="heading-font text-4xl sm:text-6xl md:text-7xl font-black tracking-tighter leading-none uppercase">
+                    EMOTIONAL INTELLIGENCE <br>
+                    <span class="text-[#FF0055] text-shadow">WITH TEETH.</span>
+                </h1>
+                
+                <div class="w-20 h-1 bg-[#FF0055] mx-auto my-6"></div>
 
-</body>
-</html>
+                <div class="text-left space-y-6 text-gray-300 max-w-3xl mx-auto text-sm sm:text-base leading-relaxed font-medium">
+                    <p>Alright… If this found you, you’re probably one of us.</p>
+                    <p>One of the people who grew up being told their volume was wrong, their timing was off, or their feelings were "a lot." One of the kids who got labeled, diagnosed, redirected, or "talked to" more times than you can count.</p>
+                    <p>But here’s the twist nobody warned them about: <span class="text-white font-bold">The people they tried to quiet down are the very people who are about to rewrite the whole damn soundtrack.</span></p>
+                    <p>So let me introduce us—not like a brand, not like a movement—like a band that finally figured out the world’s been tuning itself to the wrong key.</p>
+                </div>
+
+                <div class="pt-6">
+                    <button onclick="openQuizModal()" class="neon-pulse-crimson bg-[#FF0055] text-white heading-font uppercase font-black px-10 py-5 text-lg tracking-wider border-2 border-white transition-all duration-300 hover:bg-white hover:text-black hover:scale-105">
+                        Launch The Diagnostic Quiz
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <!-- TRANSITION INTERACTIVE DECK: CHOOSE YOUR PATHWAYS -->
+        <section class="studio-block p-8 space-y-8">
+            <div class="text-center space-y-2">
+                <h2 class="heading-font text-3xl font-black uppercase tracking-tight">The Non-Linear Console</h2>
+                <p class="text-gray-400 text-sm max-w-xl mx-auto">
+                    Skip the evaluation and step directly into your specific calibration module. Choose any target track below to unlock specialized unmuted pricing arrays.
+                </p>
+            </div>
+
+            <!-- THE 5 MULTI-COURSE ASYNCHRONOUS SYSTEM TILES -->
+            <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 pt-4">
+                
+                <!-- TILE 01 -->
+                <div class="border-2 border-[#261633] p-6 bg-black/40 flex flex-col justify-between space-y-4">
+                    <div>
+                        <span class="text-[#FF0055] text-xs font-bold block uppercase tracking-wider">TRACK 01 //</span>
+                        <h3 class="heading-font text-lg font-black uppercase mt-1">Financial Freedom</h3>
+                    </div>
+                    <ul class="text-xs text-gray-400 space-y-2 list-none pl-0">
+                        <li class="flex items-center gap-2"><span class="text-[#FF0055]">●</span> Executive function workflows</li>
+                        <li class="flex items-center gap-2"><span class="text-[#FF0055]">●</span> Anti-column budget maps</li>
+                        <li class="flex items-center gap-2"><span class="text-[#FF0055]">●</span> Micro-retire execution lines</li>
+                    </ul>
+                    <button class="w-full py-2 bg-white/5 border border-white/10 text-xs font-bold uppercase tracking-widest hover:bg-[#FF0055] hover:text-white transition-colors duration-200">Calibrate Tracking</button>
+                </div>
+
+                <!-- TILE 02 -->
+                <div class="border-2 border-[#261633] p-6 bg-black/40 flex flex-col justify-between space-y-4">
+                    <div>
+                        <span class="text-[#00F0FF] text-xs font-bold block uppercase tracking-wider">TRACK 02 //</span>
+                        <h3 class="heading-font text-lg font-black uppercase mt-1">Love Outloud</h3>
+                    </div>
+                    <ul class="text-xs text-gray-400 space-y-2 list-none pl-0">
+                        <li class="flex items-center gap-2"><span class="text-[#00F0FF]">●</span> Unmasked dating protocols</li>
+                        <li class="flex items-center gap-2"><span class="text-[#00F0FF]">●</span> High-gain intimacy management</li>
+                        <li class="flex items-center gap-2"><span class="text-[#00F0FF]">●</span> Hyperfocus boundary balances</li>
+                    </ul>
+                    <button class="w-full py-2 bg-white/5 border border-white/10 text-xs font-bold uppercase tracking-widest hover:bg-[#00F0FF] hover:text-black transition-colors duration-200">Calibrate Tracking</button>
+                </div>
+
+                <!-- TILE 03 -->
+                <div class="border-2 border-[#261633] p-6 bg-black/40 flex flex-col justify-between space-y-4">
+                    <div>
+                        <span class="text-[#FF0055] text-xs font-bold block uppercase tracking-wider">TRACK 03 //</span>
+                        <h3 class="heading-font text-lg font-black uppercase mt-1">De-Sensory Adventure</h3>
+                    </div>
+                    <ul class="text-xs text-gray-400 space-y-2 list-none pl-0">
+                        <li class="flex items-center gap-2"><span class="text-[#FF0055]">●</span> Unpredictable environment armor</li>
+                        <li class="flex items-center gap-2"><span class="text-[#FF0055]">●</span> 14-Tab flight execution tools</li>
+                        <li class="flex items-center gap-2"><span class="text-[#FF0055]">●</span> Neurodivergent travel blueprints</li>
+                    </ul>
+                    <button class="w-full py-2 bg-white/5 border border-white/10 text-xs font-bold uppercase tracking-widest hover:bg-[#FF0055] hover:text-white transition-colors duration-200">Calibrate Tracking</button>
+                </div>
+
+                <!-- TILE 04 -->
+                <div class="border-2 border-[#261633] p-6 bg-black/40 flex flex-col justify-between space-y-4">
+                    <div>
+                        <span class="text-[#00F0FF] text-xs font-bold block uppercase tracking-wider">TRACK 04 //</span>
+                        <h3 class="heading-font text-lg font-black uppercase mt-1">ADHD Relationships</h3>
+                    </div>
